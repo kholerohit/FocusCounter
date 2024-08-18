@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Focus Counter</h1>
+    <p>Current counter value when the window is not in focus:</p>
+    <div id="counter">1</div>
+    
+    <script>
+        // Initialize counter
+        let counter = 1;
+        
+        // Get the counter element
+        const counterElement = document.getElementById('counter');
+
+        // Function to increment counter and update the display
+        function incrementCounter() {
+            counter += 1;
+            counterElement.textContent = counter;
+        }
+
+        // Event listeners for focus and blur events
+        window.addEventListener('blur', incrementCounter);
+
+        // Optionally, you can handle the focus event if needed
+        window.addEventListener('focus', () => {
+            // You might want to handle something when the window gains focus
+        });
+    </script>
+</body>
+</html>
